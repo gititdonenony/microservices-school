@@ -1,0 +1,20 @@
+# Eureka server configuration
+eureka:
+  # Configuration for this Eureka instance
+  instance:
+    hostname: localhost  # Sets the hostname of this Eureka instance (for local development)
+
+  client:
+    # Disable registration with other Eureka servers
+    register-with-eureka: false
+    # Disable fetching registry information from other Eureka servers
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  # Defines the URL for this Eureka server
+
+server:
+  port: 8761  # Sets the port number for the Eureka server
+
+spring:
+  config:
+    import: optional:configserver:http://localhost:8888  # Imports configuration from a Spring Cloud Config Server
