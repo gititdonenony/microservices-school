@@ -10,7 +10,7 @@ eureka:
 
 # Server configuration
 server:
-  port: 8081  # Sets the port number for the application server
+  port: 9090  # Sets the port number for the application server
 
 # Spring application configuration
 spring:
